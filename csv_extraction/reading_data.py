@@ -1,6 +1,10 @@
 import numpy as np
 import csv
-
+#data will contain
+#moment of tranzaction
+#personal data that are encoded in numbers(city, bank, country etc..)
+#amount tranzactioned
+#if the value is or not a fraud
 def data_set(file_name):
     with open(file_name, newline="") as file:
         read = csv.reader(file)
