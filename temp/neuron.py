@@ -3,9 +3,14 @@ import random
 import math
 #propunere in caz de cv sa folosim sigmoid pentru a nu trece de valori 0<val<1
 #folisim sigmoid pentru a avea valori booleane
+
+#pentru a normaliza setul de date vom folosi standardizarea val = x - medie/abatere standard
+#pentru a mentine weight-urile si biosul intre 0 si 1 folosim sigmoid
 def sigmod(x):
     return 1/(1+numpy.exp(-x))
 
+def standardization(val, average, standard_deviation):
+    return (val - average)/standard_deviation
 class Neuron:
 
     def __init__(self):
