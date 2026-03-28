@@ -12,6 +12,8 @@ data = reading.data_set(r"F:\practica\data_set\creditcard.csv") #add dataset pat
 
 #aducem datele in valori ce vor fi procesate
 data = standardization(data)
+print(len(data[0]))
+print(data[:, -1])
 
 
 

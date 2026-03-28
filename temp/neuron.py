@@ -9,15 +9,13 @@ import math
 def sigmod(x):
     return 1/(1+numpy.exp(-x))
 
-def standardization(val, average, standard_deviation):
-    return (val - average)/standard_deviation
 class Neuron:
 
     def __init__(self):
         self.weight = numpy.random.uniform(0, 1, 31)
         self.bios = random.uniform(0,1)
 
-
+    
 
     def rez(self, x):
         return float(sigmod((numpy.sum(x[i] * self.weight[i] for  i in range(31))+self.bios)))
