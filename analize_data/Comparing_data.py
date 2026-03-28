@@ -37,21 +37,13 @@ class DataComparing:
         time = self.data[:, 0]
         amounts = self.data[:, -2]
         labels = self.data[:, -1]
-
-        # Separăm tranzacțiile normale de cele frauduloase
         time_normal = time[labels == 0]
         amount_normal = amounts[labels == 0]
 
         time_fraud = time[labels == 1]
         amount_fraud = amounts[labels == 1]
 
-        Plot.figure(figsize=(10, 6))
-
-        # TRUC DE PRO: Desenăm tranzacțiile normale primele, cu verde și foarte transparente (alpha=0.1)
-        # Dacă nu punem transparență, cele 284.000 de puncte verzi vor acoperi tot ecranul
         Plot.scatter(time_normal, amount_normal, color='green', alpha=0.1, label="Normal tranz", marker='o')
-
-        # Desenăm fraudele cu roșu, netransparente, ca să iasă în evidență peste stratul verde
         Plot.scatter(time_fraud, amount_fraud, color='red', alpha=1.0, label="Fraud tranz", marker='x')
 
         Plot.xlabel("Timpul scurs de la prima tranzacție (secunde)")
