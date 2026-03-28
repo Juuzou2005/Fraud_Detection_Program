@@ -1,7 +1,7 @@
 import numpy
 import csv_extraction.reading_data as reading
 from analize_data.Comparing_data import DataComparing
-
+from csv_extraction.convert import standardization
 data = reading.data_set(r"F:\practica\data_set\creditcard.csv") #add dataset path here
 #print(data)
 #observarea datelor prin grafice
@@ -10,8 +10,8 @@ data = reading.data_set(r"F:\practica\data_set\creditcard.csv") #add dataset pat
 # observ.BoxPLot()
 # observ.ScaterPlot()
 
-x= [numpy.min(data[:, i]) for i in range(1, 27)]
-print(x)
+#aducem datele in valori ce vor fi procesate
+data = standardization(data)
 
 
 
