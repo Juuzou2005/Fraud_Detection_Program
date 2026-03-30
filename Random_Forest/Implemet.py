@@ -1,7 +1,7 @@
 import numpy
 class Tree:
     def __init__(self, date):
-        self.best = numpy.zeros(date.shape[1] - 1)
+        self.best = numpy.zeros(len(date[0, :]) - 1)
         self.date = date.copy()
 
 
@@ -16,8 +16,8 @@ class Tree:
 
 
 
-    def Trainv2(self):
-        for col in range(self.date.shape[1] - 1):
+    def Train(self):
+        for col in range(len(self.date[0, :]) - 1):
             gini_best = 999
             for threshold in self.date[:, col]:
                 left_mask = self.date[:, col] <= threshold
